@@ -1,0 +1,49 @@
+.antiscroll-wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.antiscroll-scrollbar {
+  background: #FB9846;
+  /*background: rgba(0, 0, 0, 0.5);*/
+  -webkit-box-shadow: 0 0 1px #fff;
+  -moz-box-shadow: 0 0 1px #fff;
+  box-shadow: 0 0 1px #fff;
+  position: absolute;
+  opacity: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  -webkit-transition: linear 300ms opacity;
+  -moz-transition: linear 300ms opacity;
+  -o-transition: linear 300ms opacity;
+}
+
+.antiscroll-scrollbar-shown {
+  opacity: 1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+
+.antiscroll-scrollbar-horizontal {
+  height: 7px;
+  margin-left: 1px;
+  bottom: 1px;
+  left: 0;
+  cursor: pointer;
+}
+
+.antiscroll-scrollbar-vertical {
+  width: 20px;
+  margin-top: 1px;
+  right: 1px;
+  top: 0;
+  cursor: pointer;
+}
+
+.antiscroll-inner {
+  overflow: scroll;
+}
+
+.antiscroll-inner::-webkit-scrollbar, .antiscroll-inner::scrollbar {
+  width: 0;
+  height: 0;
+}
