@@ -20,28 +20,53 @@ class Product extends MX_Controller {
 		$this->template->set_partial('footer','footer',$data);
 	}
 	
-	public function index($cat = 0){
+	public function index($slug = '',$cat = 0,$page = 1){
 		$data = array('slug'=>'');
 		$data['title'] = "Sản phẩm";
 		$data['page'] = "product";
+
+		$txtSearch = $this->input->get('txtSearch');
+		$arr_search = array('title'=>'%'.$txtSearch.'%');
+		$limit = 16;
+		$begin = $limit * ($page-1);
+
+		$strLimit = ' LIMIT '.$begin.','.($limit+1);
 
 		$list_categories = $this->modelcategory->getCategories(array('status'=>1,'type'=>1,'parent'=>-1),null," ORDER BY `order`");
 		foreach ($list_categories as $key => $value) {
 			$list_categories[$key]['child'] = $this->modelcategory->getCategories(array('status'=>1,'parent'=>$value['id']),null," ORDER BY `order`");
 		}
 		$data['list_categories'] = $list_categories;
-
+		
 		if ($cat>0){
 			$category = $this->modelcategory->getCategoryById($cat);
-			$data['cat'] = $category;
-			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent='.$cat);
-			$list_product = $this->modelproduct->getProduct(array('category_id'=>$cat),' LIMIT 0,16');
+			if ($category){
+				$data['title'] = $category['name'];
+				$data['description'] = $category['description'];
+				$data['parent'] = $category['parent'];
+				
+				$arr_search['category_id'] = $category['id'];
+			}
 		}else{
-			$data['cat'] = array('id'=>0,'name'=>'');
-			$data['child_category'] = $this->modelcategory->getCategories(' status=1 AND parent=-1');
-			$list_product = $this->modelproduct->getProduct('',' LIMIT 0,16');
+			$data['parent'] = 0;
 		}
 
+		$list_product = $this->modelproduct->getProduct($arr_search,$strLimit);
+
+		if (count($list_product) > $limit) {
+			unset ($list_product[$limit]);
+			$data['link_next'] = base_url('danh-muc-san-pham/'.$slug.'/'.($page+1));
+		}else{
+			$data['link_next'] = '#';
+		}
+		
+		if ($page>1){
+			$data['link_prev'] = base_url('danh-muc-san-pham/'.$slug.'/'.($page-1));
+		}else{
+			$data['link_prev'] = '#';
+		}
+
+		$data['cat'] = $cat;
 		$data['list_product'] = $list_product;
 		$this->template->build('product',$data);
 	}
@@ -87,7 +112,7 @@ class Product extends MX_Controller {
 		$data['list_product'] = $list_product;
 		$this->template->build('product',$data);
 	}
-	public function detail($id=0) {
+	public function detail($slug='',$id=0) {
 		if ($id<=0) 
 			redirect(base_url().'product');
 
@@ -101,16 +126,18 @@ class Product extends MX_Controller {
 			if ($category)
 				$other_product = $this->modelproduct->getProduct(array('category_id'=>$category['id']),' LIMIT 0,5');
 			else
-				$category = array("type"=>$detail_product['type'],"id" =>0,"name"=>"");
+				$category = array("type"=>$detail_product['type'],"id" =>0,"name"=>"","slug"=>"");
 		}else{
-			$category = array("type"=>$detail_product['type'],"id" =>0,"name"=>"");
+			$category = array("type"=>$detail_product['type'],"id" =>0,"name"=>"","slug"=>"");
 			$other_product = $this->modelproduct->getProduct(array('type'=>$detail_product['type']),' LIMIT 0,5');
 		}
 		
+		$this->modelproduct->updateProductBy('slug',$slug,array('views'=>$detail_product['views']+1));
 
 		$dataR = Modules::run('right',$detail_product['type']);
 		$this->template->set_partial('right','right',$dataR);
 
+		$data['title'] = $detail_product['title'] ;
 		$data['other_product'] = $other_product;
 		$data['item'] = $detail_product;
 		$data['cat'] = $category;

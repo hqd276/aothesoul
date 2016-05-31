@@ -18,18 +18,25 @@
 				<?php if(isset($upload_mess)) echo '<label class="control-label alert alert-warning" for="inputError1">'.$upload_mess.'</label>'; ?>
 			</div>
 		</div>
-		<!-- <div class="form-group col-sm-12">
+		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Position</label>
 			<div class="col-sm-10">
-				<select class='form-control' name='category_id'>
+				<select class='form-control' name='position'>
 					<option value="0">Slide Home</option>
+					<option value="1">Small Slide Home</option>
 				</select>
 			</div>
-		</div> -->
+		</div>
 		<div class="form-group col-sm-12">
 			<label for="inputEmail3" class="col-sm-2 control-label">Title</label>
 			<div class="col-sm-10">
 			  	<input type="" class="form-control" id="inputEmail3" name="title" placeholder="Title" value="<?php echo $item['title']; ?>">
+			</div>
+		</div>
+		<div class="form-group col-sm-12">
+			<label for="inputEmail3" class="col-sm-2 control-label">Link</label>
+			<div class="col-sm-10">
+			  	<input type="" class="form-control" id="inputEmail3" name="link" placeholder="Link" value="<?php echo $item['link']; ?>">
 			</div>
 		</div>
 		<div class="form-group col-sm-12">

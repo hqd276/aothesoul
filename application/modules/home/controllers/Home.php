@@ -44,6 +44,9 @@ class Home extends MX_Controller{
 		$banners = $this->modelbanner->getBanner(array('position'=>0));
 		$data['banners'] = $banners;
 
+		$small_banners = $this->modelbanner->getBanner(array('position'=>1));
+		$data['small_banners'] = $small_banners;
+
 		// $gallery = $this->modelgallery->getGallery(array('status'=>1));
 		// $data['gallery'] = $gallery;
 

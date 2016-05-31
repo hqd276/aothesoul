@@ -35,6 +35,38 @@ $(function(){
             }
         }
     });
+    $('#hot_slide_home').owlCarousel({
+        items:6,
+        loop:true,
+        nav:true,
+        dots:false,
+        margin:10,
+        merge:true,
+        autoplay:true,
+        autoWidth:true,
+        responsive:{
+            767:{
+                mergeFit:true,
+                items:4
+            },
+            979:{
+                mergeFit:false,
+                items:6
+            },
+            480:{
+                mergeFit:true,
+                items:3
+            },
+            320:{
+                mergeFit:true,
+                items:3
+            },
+            0:{
+                mergeFit:true,
+                items:3
+            }
+        }
+    });
 
     $('.video_bl').owlCarousel({
         items:6,
@@ -44,6 +76,7 @@ $(function(){
         margin:10,
         merge:true,
         autoplay:true,
+        autoWidth:true,
         responsive:{
             767:{
                 mergeFit:true,

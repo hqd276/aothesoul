@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <?php if (isset($item)){?>
 <meta property="og:title" content="<?php echo $item['title'] ?>"/>
-<meta property="og:description" content="<?php echo $item['description'] ?>"/>
+<meta property="og:description" content="<?php echo strip_tags( $item['description']) ?>"/>
 <meta property="og:url" content="<?php echo base_url().'chi-tiet/'.$item['slug']?>" />
 <meta property="og:image" content="<?php echo base_url().'uploads/news/'.$item['image']?>" />
 <?php }?>
@@ -45,12 +45,21 @@ var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga,
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=896282510465005";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div class="container-page">
 	<div class="mp-pusher" id="mp-pusher">
   	<?php echo $template['partials']['header']; ?>
-
-	<?php echo $template['body']; ?>
+  	<main>
+  		<?php echo $template['body']; ?>
+  	</main>
 
   	<?php echo $template['partials']['footer']; ?>
   	</div>

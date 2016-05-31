@@ -49,17 +49,18 @@ class Banner extends MX_Controller{
 		$this->load->helper(array('form')); 
 		$this->load->helper(array('util')); 
 
-		$dataC = array(
-						// 'position' =>'',
+		$dataC = array('link' =>'',
+						'position' =>'',
 						'title' =>'',
 						'image' =>'',
 						'order' =>'',
 						'status' =>'');
 		
 		if ($this->input->post('submit') == "ok") {
+			$dataC['link'] = $this->input->post('link'); 
 			$dataC['title'] = $this->input->post('title'); 
 			$dataC['order'] = $this->input->post('order'); 
-			// $dataC['position'] = $this->input->post('position'); 
+			$dataC['position'] = $this->input->post('position'); 
 
 			if ($this->input->post('status'))
 				$dataC['status'] = 1;
@@ -96,9 +97,10 @@ class Banner extends MX_Controller{
 		$dataC = $this->modelbanner->getImageById($id);
 		
 		if ($this->input->post('submit') == "ok") {
+			$dataC['link'] = $this->input->post('link'); 
 			$dataC['title'] = $this->input->post('title'); 
 			$dataC['order'] = $this->input->post('order'); 
-			// $dataC['position'] = $this->input->post('position'); 
+			$dataC['position'] = $this->input->post('position'); 
 
 			if ($this->input->post('status'))
 				$dataC['status'] = 1;

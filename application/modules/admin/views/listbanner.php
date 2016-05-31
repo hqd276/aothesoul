@@ -5,6 +5,7 @@
 	<table class="table table-bordered table-hover">
 		<thead>
 			<th>Id</th>
+			<th>Position</th>
 			<th>Title</th>
 			<th>Image</th>
 			<th>Status</th>
@@ -15,6 +16,7 @@
 			<?php foreach($list as $item) {?>
 			<tr>
 				<td><?php echo $item["id"]?></td>
+				<td><?php echo ($item["position"])?'Small Slide':'Slide' ?></td>
 				<td><?php echo $item["title"]?></td>
 				<td><?php 
 				if ($item['image']!='') {
