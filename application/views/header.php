@@ -1,13 +1,9 @@
 <div id="top" class="std">&nbsp;</div>
 <div id="header">
     <div id="header_content">
-        <h1 id="logo"><a href="/"><img src="<?php echo base_url();?>assets/images/logo.png"/></a></h1>
-        <!-- <div id="top_menu">
-            <a href="">Tin tức</a>&nbsp;<a href="">Nhạc</a>&nbsp;<a href="">Tv</a>
-        </div>
-        <div id="login_area">
-            <div id="button_login"><a href="">Đăng nhập</a>&nbsp;/&nbsp;<a href="">Đăng ký</a></div>
-        </div> -->
+        <h1 id="logo">
+            <a href="/"><img src="<?php echo base_url();?>assets/images/logo.png"/></a>
+        </h1>
         <form class="navbar-form navbar-left" method="get" action="<?php echo base_url();?>danh-muc-san-pham/">
             <div id="search-area" class="input-group">
                 <div class="input-group-btn search-panel">

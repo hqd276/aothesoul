@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php echo (isset($title))?$title:$setting['title']['data']->description?></title>
-<meta name="description" content="<?php echo (isset($description))?$description:$setting['description']['data']->description?>">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<title>
+  <?php echo strip_tags((isset($title))?$title:$setting['title']['data']->description) ?>
+</title>
+<meta name="description" content="<?php echo strip_tags((isset($description))?$description:$setting['description']['data']->description) ?>">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 <?php if (isset($item)){?>
-<meta property="og:title" content="<?php echo $item['title'] ?>"/>
+<meta property="og:title" content="<?php echo strip_tags($item['title']) ?>"/>
 <meta property="og:description" content="<?php echo strip_tags( $item['description']) ?>"/>
 <meta property="og:url" content="<?php echo base_url().'chi-tiet/'.$item['slug']?>" />
 <meta property="og:image" content="<?php echo base_url().'uploads/news/'.$item['image']?>" />

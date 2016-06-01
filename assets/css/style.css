@@ -102,7 +102,7 @@ a:hover {
 }
 @media (min-width: 768px) {
     #search-area input{
-        min-width: 250px;
+        min-width: 320px;
     }
 }
 .navbar-right {
