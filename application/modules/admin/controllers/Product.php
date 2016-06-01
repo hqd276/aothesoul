@@ -19,7 +19,7 @@ class Product extends MX_Controller{
 		$this->template->set_layout('admin');
 	}
 	
-	public function index($page = 1){
+	public function index($type = 0,$page = 1){
 		$data = array();
 
 		if($page<1)
