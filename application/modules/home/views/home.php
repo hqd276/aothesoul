@@ -26,7 +26,7 @@
     
     <?php foreach ($categories as $key => $value){?>
     <div class="content_block clearfix">
-        <div class="content_title"><a href=""><?php echo $value['name']?></a></div>
+        <div class="content_title"><a href="<?php echo base_url().'danh-muc-san-pham/'.$value['slug'].'/'.$value['id']?>"><?php echo $value['name']?></a></div>
         <div class="clear" style="height: 2px;    background: #000;">&nbsp;</div>
         <div class="video_bl">
         	<?php foreach ($value['products'] as $k => $v){?>
