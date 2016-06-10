@@ -1,10 +1,13 @@
 <div id="top" class="std">&nbsp;</div>
 <div id="header">
     <div id="header_content">
+        <div class="col-sm-2">
         <h1 id="logo">
             <a href="/"><img src="<?php echo base_url();?>assets/images/logo.png"/></a>
         </h1>
-        <form class="navbar-form navbar-left" method="get" action="<?php echo base_url();?>danh-muc-san-pham/">
+        </div>
+        <div class="col-sm-7">
+        <form class="" method="get" action="<?php echo base_url();?>danh-muc-san-pham/">
             <div id="search-area" class="input-group">
                 <div class="input-group-btn search-panel">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-right: -2px;" aria-expanded="false"> 
@@ -26,6 +29,8 @@
                 </span>
             </div>
         </form>
+        </div>
+        <div class="col-sm-3">
         <ul class="nav navbar-nav navbar-right text-uppercase">
             <li class="dropdown shellOff">
                 <a href="#" class="dropdown-toggle tpnav " data-toggle="dropdown" role="button" aria-expanded="false">
@@ -42,6 +47,7 @@
             </li>
             <li class="shellOff"><a href="<?php echo base_url();?>lien-he">Liên hệ</a></li>
         </ul>
+        </div>
         <div class="clear"></div>
     </div>
 </div>

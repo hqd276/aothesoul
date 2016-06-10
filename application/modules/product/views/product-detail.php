@@ -1,6 +1,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/product.css">
 <div class="container">
-	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
+	<div class="adv-top text-center text-uppercase">
+		Đồng giá 100.000 VNĐ
+	</div>
 	<section id="product-detail">
 	  	<h2 class="product-title"><?php echo $title?></h2>
 
@@ -40,7 +42,7 @@
 		<ul class="list-unstyled other-product">
 		<?php if (count($other_product)>0) {
 			foreach ($other_product as $key => $value) {?>
-				<li class="col-sm-2">
+				<li class="col-sm-2 col-xs-6">
 					<a href="<?php echo base_url().'chi-tiet-san-pham/'.$value['slug']?>"> 
 						<img class="pull-left" src="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>">
 						<?php echo $value['title']?>

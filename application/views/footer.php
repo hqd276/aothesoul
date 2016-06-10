@@ -1,8 +1,8 @@
 <div id="footer">
     <div id="footer_content">
-        <div class="footer_ulti">
+        <!-- <div class="footer_ulti">
             <div class="ulti_block">
-                <div class="ulti_item">The soul</div>
+                <div class="ulti_item">Mvod</div>
                 <div class="ulti_item"><a href="">Giới thiệu</a> </div>
                 <div class="ulti_item"><a href="">Tuyển dụng</a></div>
                 <div class="ulti_item"><a href="">Điều khoản sử dụng</a></div>
@@ -29,12 +29,25 @@
                 <div class="ulti_item"><a href="">Twitter</a></div>
             </div>
             <div class="clear" style="height: 1px">&nbsp;</div>
+        </div> -->
+        <div id="copyright" class="col-sm-8">
+            <div class="col-sm-6">
+                Tổng đài tư vấn:
+                0979680346 (A.Tiến)<br>
+                thesoulvn@gmail.com<br>
+                http://dongphucthesoul.com/
+            </div>
+            <div class="col-sm-6">
+                Cơ sở 1: 11, nghách 20, ngõ 214, Nguyễn Xiển, Hà Nội<br>
+                Cơ sở 2: 157 Nguyễn Văn Cừ, Hạ Long, Hà Nội<br>
+                Cơ sở 3: 244 tổ 5 khu 10 - TT Trới - Hoành Bồ - Quảng Ninh
+            </div>
         </div>
-        <div id="copyright">Địa chỉ: 276 Nguyễn Trãi, Thanh Xuân Bắc, Hà Nội<br/>
-            Mail: thesoulvn@gmail.com<br/>
-            Fanpage: www.facebook.com/dongphucthesoul</div>
-        <div id="footer_logo"><a href=""><img src="<?php echo base_url();?>assets/images/logo.png"/> </a></div>
-        <div id="more_info">© Copyright HD 2015</div>
+        
+        <div id="more_info" class="col-sm-4 text-right">
+            © Copyright HD 2015
+            <div id="footer_logo"><a href=""><img src="<?php echo base_url();?>assets/images/logo.png"/> </a></div>
+        </div>
         <div class="clear" style="height: 1px;">&nbsp;</div>
     </div>
 </div>

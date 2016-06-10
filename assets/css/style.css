@@ -15,6 +15,12 @@ a:hover {
 }
 .adv-top {
     width: 100%;
+    line-height: 70px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    background-color: #000;
+    color: #fff;
 }
 .owl-theme .owl-controls .owl-nav .disabled {
     opacity: 0;
@@ -97,13 +103,13 @@ a:hover {
 }
 
 #search-area {
-    padding-top: 10px;
+    padding-top: 20px;
     padding-left: 30px;
 }
 @media (min-width: 768px) {
-    #search-area input{
+    /*#search-area input{
         min-width: 320px;
-    }
+    }*/
 }
 .navbar-right {
     margin-top: 10px;
@@ -559,12 +565,12 @@ li .padding {
 #footer {
     background: #000;
     padding-top: 10px;
-    color: #434343;
+    color: #fff;
     height: auto;
 }
 
 #footer a {
-    color: #434343;
+    color: #fff;
 }
 
 #footer_content {
@@ -635,4 +641,5 @@ li .padding {
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 2px;
+    margin-bottom: 5px;
 }

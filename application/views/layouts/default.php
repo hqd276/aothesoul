@@ -30,7 +30,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/lightbox.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/reset.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css?<?php echo time();?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/owl.carousel.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/owl.theme.css"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style_common.css">

@@ -8,3 +8,8 @@
 	height: 95px;
     width: auto;
 }
+@media (min-width: 768px) {
+    .small-slide .owl-item img{
+		height: 65px;
+	}
+}

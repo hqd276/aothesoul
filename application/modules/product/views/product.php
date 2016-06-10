@@ -1,7 +1,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/product.css">
 
 <div class="container">
-	<img class="adv-top" src="<?php echo base_url();?>assets/images/ad.jpg">
+	<div class="adv-top text-center text-uppercase">
+		Đồng giá 100.000 VNĐ
+	</div>
 	<div class="row">
 	  	<div class="menu-left col-sm-3">
 	  		<div class="panel-group" id="accordion">
@@ -36,7 +38,7 @@
 			<?php $i=1;
 			foreach ($list_product as $key => $value) {?>
 				
-					<div class="item col-sm-3">
+					<div class="item col-sm-3 col-xs-6">
 						<a href="<?php echo base_url().'chi-tiet-san-pham/'.$value['slug'].'/'.$value['id']?>">
 							<img class="img-responsive" src="<?php echo base_url().'uploads/product/thumbs/'.$value['image']?>">
 							<?php echo $value['title'];?>
